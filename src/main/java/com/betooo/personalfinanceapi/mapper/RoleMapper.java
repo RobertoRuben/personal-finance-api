@@ -1,7 +1,7 @@
 package com.betooo.personalfinanceapi.mapper;
 
 import com.betooo.personalfinanceapi.dto.RoleDTO;
-import com.betooo.personalfinanceapi.model.Role;
+import com.betooo.personalfinanceapi.model.entity.Role;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;

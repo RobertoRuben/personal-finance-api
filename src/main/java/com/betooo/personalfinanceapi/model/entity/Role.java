@@ -1,4 +1,4 @@
-package com.betooo.personalfinanceapi.model;
+package com.betooo.personalfinanceapi.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
