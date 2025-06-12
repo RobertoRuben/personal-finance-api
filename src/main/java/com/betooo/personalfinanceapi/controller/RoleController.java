@@ -1,7 +1,6 @@
 package com.betooo.personalfinanceapi.controller;
 
 import com.betooo.personalfinanceapi.dto.RoleDTO;
-import com.betooo.personalfinanceapi.model.entity.Role;
 import com.betooo.personalfinanceapi.service.interfaces.RoleService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
