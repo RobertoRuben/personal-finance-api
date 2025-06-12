@@ -77,7 +77,7 @@ public class TenantServiceImpl implements TenantService {
 
     @Transactional(readOnly = true)
     @Override
-    public Page<TenantDTO> getTenants(Pageable pageable) {
+    public Page<TenantDTO> getTenantsPage(Pageable pageable) {
         Page<Tenant> tenants = tenantRepository.findAll(pageable);
         return tenants.map(tenantMapper::toDTO);
     }
@@ -92,10 +92,17 @@ public class TenantServiceImpl implements TenantService {
 
     @Transactional
     @Override
-    public void deactivateTenant(Long id) {
+    public TenantDTO changeTenantActiveStatus(Long id, boolean active) {
         Tenant tenant = tenantRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Tenant not found"));
-        tenant.setIsActive(false);
+
+        if (tenant.getIsActive() == active) {
+            return tenantMapper.toDTO(tenant);
+        }
+
+        tenant.setIsActive(active);
         tenantRepository.save(tenant);
+
+        return tenantMapper.toDTO(tenant);
     }
 }

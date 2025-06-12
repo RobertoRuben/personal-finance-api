@@ -12,8 +12,8 @@ public interface TenantService {
     List<TenantDTO> getAllTenants();
     TenantDTO updateTenant(Long id, TenantDTO tenantDTO);
     void deleteTenant(Long id);
-    Page<TenantDTO> getTenants(Pageable pageable);
+    Page<TenantDTO> getTenantsPage(Pageable pageable);
     TenantDTO getTenantById(Long id);
-    void deactivateTenant(Long id);
+    TenantDTO changeTenantActiveStatus(Long id, boolean active);
 
 }
